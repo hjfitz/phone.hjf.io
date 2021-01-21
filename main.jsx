@@ -14,6 +14,7 @@ const App = () => {
 	const id = useRef(idInit)
 	const peer = useRef(new Peer(idInit))
 	const [stream, setStream] = useState(null)
+	const [muted, setMuted] = useState(false)
 
 	const video = useRef(null)
 	const them = useRef(null)
@@ -24,6 +25,14 @@ const App = () => {
 		dial.on('stream', (remote) => {
 			them.current.srcObject = remote
 			them.current.play()
+		})
+	}
+
+	async function mute() {
+		setMuted((state) => {
+			// set enabled to what we're inverting to
+			stream.getAudioTracks().forEach((track) => track.enabled = state)
+			return !state
 		})
 	}
 
@@ -54,6 +63,10 @@ const App = () => {
 				</label>
 				<button type="button" onClick={call}>Call</button>
 			</div>
+			<div>
+				<button type="button" onClick={mute}>Mute (muted: {muted.toString()})</button>
+			</div>
+
 			<div>
 				<video muted ref={video} />
 			</div>

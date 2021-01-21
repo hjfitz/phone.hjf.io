@@ -37,8 +37,6 @@ src/client/.next
 
 .env.local
 
-# yarn lock
-yarn.lock
 
 .next
 src/out

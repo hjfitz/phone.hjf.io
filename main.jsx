@@ -1,6 +1,8 @@
-import React, {useEffect, useRef, useState} from 'react'
+import * as React from 'react'
 import {render} from 'react-dom'
 import Peer from 'peerjs'
+
+const {useEffect, useRef, useState} = React
 
 const entry = document.getElementById('main')
 
@@ -11,8 +13,6 @@ const App = () => {
 	const id = useRef(idInit)
 	const peer = useRef(new Peer(idInit))
 	const [stream, setStream] = useState(null)
-
-	console.log({peer})
 
 	const video = useRef(null)
 	const them = useRef(null)

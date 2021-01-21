@@ -55,7 +55,7 @@ const App = () => {
 				<button type="button" onClick={call}>Call</button>
 			</div>
 			<div>
-				<video ref={video} />
+				<video muted ref={video} />
 			</div>
 			<div>
 				<video ref={them} />

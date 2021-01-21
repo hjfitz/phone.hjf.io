@@ -2,6 +2,7 @@ import * as React from 'react'
 import {render} from 'react-dom'
 import Peer from 'peerjs'
 
+// awful snowpack hack
 const {useEffect, useRef, useState} = React
 
 const entry = document.getElementById('main')
@@ -28,7 +29,7 @@ const App = () => {
 
 	useEffect(() => {
 		if (!stream) {
-			navigator.mediaDevices.getUserMedia({video: true}).then((s) => setStream(s))
+			navigator.mediaDevices.getUserMedia({audio: true, video: true}).then((s) => setStream(s))
 		} else {
 			video.current.srcObject = stream
 			video.current.play()

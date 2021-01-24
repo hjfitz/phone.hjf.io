@@ -156,21 +156,21 @@ const App = () => {
 		<main className="p-8">
 			<div>
 				<p className="h-12">
-					<span className="text-sm border-2 border-r-0 rounded-l px-4 py-2 bg-gray-300 whitespace-no-wrap">Your ID:</span>
+					<span className="px-4 py-2 text-sm whitespace-no-wrap bg-gray-300 border-2 border-r-0 rounded-l">Your ID:</span>
 					<span
-						className="bg-white cursor-pointer border-2 rounded-r px-4 py-2 w-full" 
+						className="w-full px-4 py-2 bg-white border-2 rounded-r cursor-pointer" 
 						onClick={copyID}
 					>
 							{id.current}
 					</span>
 				</p>
 				<div className="flex">
-					<span className="text-sm border-2 border-r-0 rounded-l px-4 py-2 bg-gray-300 whitespace-no-wrap">Partner ID:</span>
+					<span className="px-4 py-2 text-sm whitespace-no-wrap bg-gray-300 border-2 border-r-0 rounded-l">Partner ID:</span>
 					<input 
 						ref={idIn}
 						onKeyUp={tryCall} 
 						name="field_name" 
-						className="border-2 rounded-r px-4 py-2" 
+						className="px-4 py-2 border-2 rounded-r" 
 						type="text" 
 						placeholder="Enter your partner's ID" 
 					/>
@@ -179,10 +179,10 @@ const App = () => {
 			
 
 
-			<div className="grid grid-cols-10 grid-rows-2 gap-8 my-4">
+			<div className="my-4 grid grid-cols-10 grid-rows-2 gap-8">
 				<section className={`${showChat ? 'col-span-4' : 'col-span-5'} bg-white shadow`}>
 						<video muted ref={video} className="us" />
-					<div className="flex sm:flex-nowrap flex-wrap justify-center md:justify-between py-2 px-4">
+					<div className="flex flex-wrap justify-center px-4 py-2 sm:flex-nowrap md:justify-between">
 							<button type="button" onClick={mute}>Mute (muted: {muted.toString()})</button>
 							<button type="button" onClick={share}>Share screen</button>
 							<button type="button" onClick={toggleChat}>{showChat ? 'hide' : 'show'} chat</button>
@@ -191,13 +191,13 @@ const App = () => {
 					</section>
 
 					<section className={`${showChat ? 'col-span-4' : 'col-span-5'} bg-white shadow`}>
-						<h2 className="text-center py-2">Your Partner</h2>
+						<h2 className="py-2 text-center">Your Partner</h2>
 						<video ref={them} />
 					</section>
 
 					<section className={`${showChat || 'hidden'} col-span-2 ${sharing && 'row-span-2'} flex flex-col justify-between shadow bg-white`}>
 						<h2 className="py-2 text-center">Chat</h2>
-						<div className="flex-1 break-words px-2">
+						<div className="flex-1 px-2 break-words">
 							{messages.map(message => (
 								<div className={`message ${message.from}`}>
 									<div key={message.id}>
@@ -206,12 +206,12 @@ const App = () => {
 								</div>
 							))}
 						</div>
-						<div class="flex border-t-2">
-							<span class="text-sm px-4 py-2 bg-gray-300 whitespace-no-wrap">Chat:</span>
+						<div className="flex border-t-2">
+							<span className="px-4 py-2 text-sm whitespace-no-wrap bg-gray-300">Chat:</span>
 							<input 
 								onKeyUp={sendMessage} 
 								name="field_name" 
-								class="px-4 py-2 w-full" 
+								className="w-full px-4 py-2" 
 								type="text" 
 								placeholder="Send a message..." 
 							/>

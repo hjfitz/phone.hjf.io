@@ -1,22 +1,28 @@
 {
-  "name": "test",
+  "name": "p2p-phone-chat",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "scripts": {
     "dev": "snowpack dev",
-    "build": "snowpack build"
+    "build": "NODE_ENV=production snowpack build"
+  },
+  "bugs": {
+    "url": "https://github.com/hjfitz/p2p-phone-call/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hjfitz/p2p-phone-call.git"
   },
   "devDependencies": {
     "@snowpack/plugin-postcss": "^1.1.0",
     "autoprefixer": "^10.2.3",
     "postcss": "^8.2.4",
     "snowpack": "^3.0.11",
+    "postcss-cli": "^8.3.1",
     "tailwindcss": "^2.0.2"
   },
   "dependencies": {
     "peerjs": "^1.3.1",
-    "postcss-cli": "^8.3.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }

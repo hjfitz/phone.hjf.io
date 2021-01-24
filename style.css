@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	@apply bg-gray-100;
+}
+
+.us {
+	transform: scaleX(-1);
+}
+
+button {
+	@apply inline-block px-3 py-1 text-xs font-medium leading-6 text-center text-blue-700 uppercase transition bg-transparent border-2 border-blue-700 rounded hover:bg-blue-100 focus:outline-none m-2;
+}
+
+h2 {
+	@apply text-lg;
+}
+
+.message {
+	@apply flex my-2;
+}
+
+.message > div {
+	@apply px-4 py-2 rounded-lg inline-block;
+
+}
+
+.message.them > div {
+	@apply rounded-bl-none bg-gray-300 text-gray-800;
+}
+
+.message.me {
+	@apply justify-end;
+}
+
+.message.me > div {
+	@apply rounded-br-none bg-blue-600 text-white;
+}
